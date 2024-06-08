@@ -1,8 +1,8 @@
 {
-    "name": "recicash-api",
+    "name": "api",
     "version": "0.0.1",
     "description": "",
-    "author": "Recicash LTDA",
+    "author": "Matheus Lehnen",
     "private": true,
     "license": "UNLICENSED",
     "scripts": {

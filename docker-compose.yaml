@@ -1,7 +1,7 @@
 services:
     db:
         image: postgres:latest
-        container_name: recicash-db
+        container_name: db
         tty: true
         volumes:
             - /var/lib/postgresql:/var/lib/postgresql/data
@@ -14,9 +14,9 @@ services:
         env_file:
             - ./.env
         networks:
-            - rc-net
+            - internal
     api:
-        container_name: recicash-api
+        container_name: api
         tty: true
         build:
             dockerfile: Dockerfile
@@ -31,7 +31,7 @@ services:
         env_file:
             - ./.env
         networks:
-            - rc-net
+            - internal
 networks:
-    rc-net:
+    internal:
         driver: bridge
