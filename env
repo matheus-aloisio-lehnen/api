@@ -1,0 +1,46 @@
+
+#--------------------------------------------------------------------
+# ENVIRONMENT
+#--------------------------------------------------------------------
+PORT=3000
+TZ=America/Sao_Paulo
+SWAGGER_ENABLED=true
+SWAGGER_TITLE=Boilerplate API
+SWAGGER_DESCRIPTION=Boilerplate API
+SWAGGER_VERSION=1.0
+FRONTEND_URL=http://localhost:4200
+
+#--------------------------------------------------------------------
+# DATABASE
+#--------------------------------------------------------------------
+DB_HOST=db
+DB_PORT=5432
+DB_USERNAME=postgres
+DB_PASSWORD=
+DB_NAME=postgres
+DB_SYNC=true
+
+#--------------------------------------------------------------------
+# Keys
+#--------------------------------------------------------------------
+JWT_SECRET=123456
+JWT_EXPIRES_TIME=24
+CRYPTO_KEY=123456
+SALT_OR_ROUNDS=10
+
+#--------------------------------------------------------------------
+# RabbitMQ
+#--------------------------------------------------------------------
+RABBITMQ_URL=amqp://rabbitMQ:5672  # for docker run
+#RABBITMQ_URL=amqp://localhost:5672  # for local run
+RABBITMQ_USER=
+RABBITMQ_PASSWORD=
+
+#--------------------------------------------------------------------
+# Microservice Email
+#--------------------------------------------------------------------
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=465
+EMAIL_SECURE=true
+EMAIL_USER=r
+EMAIL_PASSWORD=

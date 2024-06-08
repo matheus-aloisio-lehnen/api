@@ -1,0 +1,37 @@
+services:
+    db:
+        image: postgres:latest
+        container_name: recicash-db
+        tty: true
+        volumes:
+            - /var/lib/postgresql:/var/lib/postgresql/data
+        ports:
+            - '5432:5432'
+        environment:
+            POSTGRES_USER: ${DB_USERNAME}
+            POSTGRES_PASSWORD: ${DB_PASSWORD}
+            POSTGRES_DB: ${DB_NAME}
+        env_file:
+            - ./.env
+        networks:
+            - rc-net
+    api:
+        container_name: recicash-api
+        tty: true
+        build:
+            dockerfile: Dockerfile
+            target: debug
+        ports:
+            - '3000:3000'
+            - '9229:9229'
+        depends_on:
+            - db
+        volumes:
+            - ./src:/app/src
+        env_file:
+            - ./.env
+        networks:
+            - rc-net
+networks:
+    rc-net:
+        driver: bridge
